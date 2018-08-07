@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">MangaLib</string>
+
+    <string name="rate_label">Calificacion:</string>
+    <string name="picture">Imagen</string>
+    <string name="btn_add_item_text">Add Item</string>
+    <string name="url_image_test">https://orig00.deviantart.net/412d/f/2012/358/f/5/naruto_manga__nueva_portada_no_63__by_jairopd-d5p2fnf.jpg</string>
+    <string name="btn_delete_all_text">Delete All</string>
+    <string name="new_manga_header">Nuevo Manga</string>
+    <string name="title_manga_hint">Escriba título del manga</string>
+    <string name="desc_manga_hint">Escriba descripción del manga</string>
+    <string name="image_manga_hint">Añada la URL de una image para portada</string>
+    <string name="rate_manga_hint">Escriba calificación del manga</string>
+    <string name="btn_add_manga_text">Añadir nuevo manga a la lista</string>
+
+    <!--Test Data-->
+    <string name="test_title">Fairy Tail</string>
+    <string name="test_desc">Aventura, Peleas, Magia, Fantasía</string>
+    <string name="test_url_image">"http://4.bp.blogspot.com/-IKyNJDvOI0U/UqSc3npchHI/AAAAAAAAJ4U/yfVzzJkgXj4/s1600/33.jpg"</string>
+    <string name="test_rate">5</string>
+
+</resources>

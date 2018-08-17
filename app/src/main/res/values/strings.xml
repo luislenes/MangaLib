@@ -18,5 +18,7 @@
     <string name="test_desc">Aventura, Peleas, Magia, Fantasía</string>
     <string name="test_url_image">"http://4.bp.blogspot.com/-IKyNJDvOI0U/UqSc3npchHI/AAAAAAAAJ4U/yfVzzJkgXj4/s1600/33.jpg"</string>
     <string name="test_rate">5</string>
+    <string name="new_manga_success">Añadido correctamente</string>
+    <string name="uncompleted_form">Por favor rellene todos los campos</string>
 
 </resources>

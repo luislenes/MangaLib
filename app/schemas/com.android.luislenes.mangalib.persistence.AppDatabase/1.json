@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "ccf174b13dc2578708d0feecdae59246",
+    "identityHash": "623093d2bb499121051efd08f584b8db",
     "entities": [
       {
         "tableName": "manga",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `title` TEXT NOT NULL, `description` TEXT NOT NULL, `image_url` TEXT NOT NULL, `rate` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `title` TEXT NOT NULL, `description` TEXT NOT NULL, `url_image` TEXT NOT NULL, `rate` TEXT NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -28,7 +28,7 @@
           },
           {
             "fieldPath": "urlImage",
-            "columnName": "image_url",
+            "columnName": "url_image",
             "affinity": "TEXT",
             "notNull": true
           },
@@ -51,7 +51,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"ccf174b13dc2578708d0feecdae59246\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"623093d2bb499121051efd08f584b8db\")"
     ]
   }
 }

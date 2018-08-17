@@ -4,16 +4,17 @@ import android.app.Application
 import android.arch.lifecycle.LiveData
 import org.jetbrains.anko.doAsync
 
-class MangaRepository(app: Application) {
+class MangaRepository private constructor(app: Application) {
 
-    private val mangaDao: MangaDao = AppDatabase.getInstance(app).mangaDao()
-    private var mangas: LiveData<List<Manga>>
+    companion object {
+        private var instance: MangaRepository? = null
 
-    init {
-        mangas = mangaDao.getAll()
+        fun getInstance(app: Application): MangaRepository = instance ?: MangaRepository(app)
     }
 
-    fun getAllMangas() = mangas
+    private var mangaDao: MangaDao = AppDatabase.getInstance(app).mangaDao()
+
+    fun getAllMangas() = mangaDao.getAll()
 
     fun insert(manga: Manga) {
         doAsync {

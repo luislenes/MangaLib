@@ -1,53 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout>
 
-    <LinearLayout
+    <data>
+        <variable
+            name="viewModel"
+            type="com.android.luislenes.mangalib.ui.newmanga.NewMangaVM" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="@dimen/medium_spacing">
+        android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/tvTitle"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/medium_spacing">
+
+            <EditText
+                android:id="@+id/etTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/title_manga_hint"
+                android:hint="@string/title_manga_hint"
+                android:inputType="text"
+                android:text="@={viewModel.title}"/>
+
+            <EditText
+                android:id="@+id/etDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/desc_manga_hint"
+                android:hint="@string/desc_manga_hint"
+                android:inputType="text"
+                android:text="@={viewModel.description}"/>
+
+            <EditText
+                android:id="@+id/etImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/title_manga_hint"
+                android:hint="@string/image_manga_hint"
+                android:inputType="text"
+                android:text="@={viewModel.urlImage}"/>
+
+            <EditText
+                android:id="@+id/etRate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/title_manga_hint"
+                android:hint="@string/rate_manga_hint"
+                android:inputType="number"
+                android:text="@={viewModel.rate}"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAddManga"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints="@string/title_manga_hint"
-            android:hint="@string/title_manga_hint"
-            android:inputType="text" />
-
-        <EditText
-            android:id="@+id/tvDesc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="@string/desc_manga_hint"
-            android:hint="@string/desc_manga_hint"
-            android:inputType="text" />
-
-        <EditText
-            android:id="@+id/tvImage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="@string/title_manga_hint"
-            android:hint="@string/image_manga_hint"
-            android:inputType="text" />
-
-        <EditText
-            android:id="@+id/tvRate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="@string/title_manga_hint"
-            android:hint="@string/rate_manga_hint"
-            android:inputType="number" />
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btnAddManga"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="@dimen/medium_spacing"
-        android:text="@string/btn_add_manga_text" />
-</RelativeLayout>
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/medium_spacing"
+            android:text="@string/btn_add_manga_text" />
+    </RelativeLayout>
+</layout>

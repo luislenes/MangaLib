@@ -8,9 +8,9 @@ import android.arch.lifecycle.ViewModelProvider
 import com.android.luislenes.mangalib.persistence.Manga
 import com.android.luislenes.mangalib.persistence.MangaRepository
 
-class MainViewModel(app: Application) : AndroidViewModel(app) {
+class MainVM(app: Application) : AndroidViewModel(app) {
 
-    private val repository = MangaRepository(app)
+    private val repository = MangaRepository.getInstance(app)
     private var mangas: LiveData<List<Manga>>
 
     init {
@@ -24,9 +24,9 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
     fun deleleAll() = repository.deleleAll()
 }
 
-class MainViewModelFactory(private val app: Application) : ViewModelProvider.NewInstanceFactory() {
+class MainVMFactory(private val app: Application) : ViewModelProvider.NewInstanceFactory() {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return MainViewModel(app) as T
+        return MainVM(app) as T
     }
 }
